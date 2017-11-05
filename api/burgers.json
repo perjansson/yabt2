@@ -1,0 +1,17 @@
+[
+  {
+    "id": "barrels",
+    "name": "Barrels",
+    "web": "http://www.barrels.se"
+  },
+  {
+    "id": "lilys",
+    "name": "Lily's Burger",
+    "web": "http://www.lilysburger.com"
+  },
+  {
+    "id": "frickhagberg",
+    "name": "Frick & Hagberg",
+    "web": "http://www.frickochson.se"
+  }
+]
