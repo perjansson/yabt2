@@ -1,5 +1,7 @@
 const isDev = process.env.NODE_ENV !== 'production';
 
-export default {
+const config = {
   apiUrl: isDev ? 'http://localhost:3000' : 'https://yetanotherburgertested.herokuapp.com',
 };
+
+export default config.apiUrl;
