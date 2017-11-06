@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
+import Head from 'next/head';
 import Link from 'next/link';
 
 import apiUrl from '../config/apiUrl';
 
 const Index = ({ burgers }) => (
   <div>
+    <Head>
+      <title>Burgers!</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+    </Head>
     <h1>Burgers!</h1>
     <ul>
       {burgers.map(burger => (
