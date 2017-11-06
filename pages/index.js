@@ -6,11 +6,11 @@ import apiUrl from '../config/apiUrl';
 
 const Index = ({ burgers }) => (
   <div>
-    <h1>Burgers</h1>
+    <h1>Burgers!</h1>
     <ul>
       {burgers.map(burger => (
         <li key={burger.id}>
-          <Link as={`/b/${burger.id}`} href={`/burger?id=${burger.id}`}>
+          <Link prefetch as={`/b/${burger.id}`} href={`/burger?id=${burger.id}`}>
             <a>{burger.name}</a>
           </Link>
         </li>
