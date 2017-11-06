@@ -13,5 +13,105 @@
     "id": "frickhagberg",
     "name": "Frick & Hagberg",
     "web": "http://www.frickochson.se"
+  },
+  {
+    "id": "bunmeatbun",
+    "name": "Bun Meat Bun",
+    "web": "http://www.bunmeatbun.se"
+  },
+  {
+    "id": "burgerbistro",
+    "name": "Burger Bistro",
+    "web": "http://www.burgerbistro.se"
+  },
+  {
+    "id": "curbside",
+    "name": "Curbside",
+    "web": "http://www.curbside.se"
+  },
+  {
+    "id": "kak",
+    "name": "Käk",
+    "web": "http://xn--kk-via.com/"
+  },
+  {
+    "id": "svenskahamburgerkoket",
+    "name": "Svenska Hamburgerköket",
+    "web": "http://www.hamburgerkoket.se/"
+  },
+  {
+    "id": "prime",
+    "name": "Prime Burger",
+    "web": "http://www.primeburger.se"
+  },
+  {
+    "id": "frankys",
+    "name": "Franky's",
+    "web": "https://www.facebook.com/pages/Frankys/1521921874691695"
+  },
+  {
+    "id": "gnarly",
+    "name": "Gnarly Burger",
+    "web": "http://www.gnarlyburger.se"
+  },
+  {
+    "id": "burgerboat",
+    "name": "Burger Boat",
+    "web": "http://www.burgerboat.se/"
+  },
+  {
+    "id": "angrydiner",
+    "name": "Angry Diner",
+    "web": "http://www.facebook.com/angrydiner"
+  },
+  {
+    "id": "fastfoodspecialisterna",
+    "name": "Fast Food Specialisterna",
+    "web": "http://www.facebook.com/Fast-Food-Specialisterna-188706417998748/"
+  },
+  {
+    "id": "cafelevinsky",
+    "name": "Café Levinsky's",
+    "web": "http://www.levinskys.se"
+  },
+  {
+    "id": "bonmoulesburger",
+    "name": "Bon Moules & Burgers",
+    "web": "https://www.bookatable.se/bon-moules-burgers-vasastan-stockholm"
+  },
+  {
+    "id": "philsburger",
+    "name": "Phils Burger",
+    "web": "http://www.philsburger.se"
+  },
+  {
+    "id": "kitchenontheroad",
+    "name": "Kitchen On The Road",
+    "web": "https://www.facebook.com/Kitchen-On-The-Road-751538624922182"
+  },
+  {
+    "id": "babas",
+    "name": "Babas",
+    "web": "http://www.babas.nu"
+  },
+  {
+    "id": "e4baren",
+    "name": "E4-baren",
+    "web": "http://www.e4-baren.se"
+  },
+  {
+    "id": "vigarda",
+    "name": "Vigårda",
+    "web": "http://www.vigarda.se"
+  },
+  {
+    "id": "barburgercafe",
+    "name": "Bar Burger Café",
+    "web": "http://www.barburgercafe.se"
+  },
+  {
+    "id": "burgersbeer",
+    "name": "Burgers & Beer",
+    "web": "http://www.burgersandbeer.se"
   }
 ]

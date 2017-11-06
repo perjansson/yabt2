@@ -1,4 +1,4 @@
-import { arrayOf, object } from 'prop-types';
+import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 
@@ -29,7 +29,7 @@ Index.getInitialProps = async () => {
 };
 
 Index.propTypes = {
-  burgers: arrayOf(object).isRequired,
+  burgers: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Index;

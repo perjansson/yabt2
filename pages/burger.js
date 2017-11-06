@@ -1,4 +1,4 @@
-import { string } from 'prop-types';
+import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 
 import apiUrl from '../config/apiUrl';
@@ -23,8 +23,8 @@ Burger.getInitialProps = async (context) => {
 };
 
 Burger.propTypes = {
-  name: string.isRequired,
-  web: string.isRequired,
+  name: PropTypes.string.isRequired,
+  web: PropTypes.string.isRequired,
 };
 
 export default Burger;
