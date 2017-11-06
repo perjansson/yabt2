@@ -1,6 +1,8 @@
 import { string } from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 
+import { apiUrl } from '../config/config';
+
 const Burger = ({ name, web }) => (
   <div>
     <h1>{name}</h1>
@@ -12,7 +14,7 @@ const Burger = ({ name, web }) => (
 
 Burger.getInitialProps = async (context) => {
   const { id } = context.query;
-  const res = await fetch(`http://localhost:3000/api/b/${id}`);
+  const res = await fetch(`${apiUrl}/api/b/api/b/${id}`);
   const burger = await res.json();
 
   console.log(`Fetched burger: ${burger.name}`);
