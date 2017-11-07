@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "next build",
+    "build:static": "next build && next export",
     "start": "NODE_ENV=production node server.js",
     "start:dev": "nodemon --watch server.js server.js",
     "start:nobackend": "next start -p 8000",

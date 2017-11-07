@@ -1,0 +1,6 @@
+
+          window.__NEXT_REGISTER_PAGE('/burger', function() {
+            var comp = module.exports=webpackJsonp([5],{190:function(e,t,n){e.exports=n(191)},191:function(e,t,n){"use strict";function a(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var r=n(25),u=a(r),l=n(34),c=a(l),d=n(31),i=a(d),o=n(6),f=a(o),s=n(16),p=(a(s),n(101)),m=a(p),v=n(69),w=a(v),b=n(104),h=a(b),E=function(e){var t=e.name,n=e.web;return f.default.createElement("div",null,f.default.createElement(w.default,null,f.default.createElement("title",null,t),f.default.createElement("meta",{name:"viewport",content:"initial-scale=1.0, width=device-width",key:"viewport"})),f.default.createElement("h1",null,t),f.default.createElement("a",{href:n,target:"_blank"},">>> Homepage"))};E.getInitialProps=function(){var e=(0,i.default)(u.default.mark(function e(t){var n,a,r;return u.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return n=t.query.id,e.next=3,(0,m.default)(h.default+"/api/b/"+n);case 3:return a=e.sent,e.next=6,a.json();case 6:return r=e.sent,console.log("Fetched burger: "+r.name),e.abrupt("return",(0,c.default)({},r));case 9:case"end":return e.stop()}},e,void 0)}));return function(t){return e.apply(this,arguments)}}(),t.default=E}},[190]);
+            return { page: comp.default }
+          })
+        

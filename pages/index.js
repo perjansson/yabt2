@@ -1,27 +1,41 @@
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
-import Head from 'next/head';
 import Link from 'next/link';
+
+import Layout from '../components/layout';
 
 import apiUrl from '../config/apiUrl';
 
 const Index = ({ burgers }) => (
-  <div>
-    <Head>
-      <title>Burgers!</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-    </Head>
-    <h1>Burgers!</h1>
+  <Layout key="body" renderHeader={() => <h1>Burgers!</h1>}>
     <ul>
       {burgers.map(burger => (
         <li key={burger.id}>
-          <Link prefetch as={`/b/${burger.id}`} href={`/burger?id=${burger.id}`}>
+          <Link prefetch as={`b/${burger.id}`} href={`/burger?id=${burger.id}`}>
             <a>{burger.name}</a>
           </Link>
         </li>
       ))}
     </ul>
-  </div>
+    <style jsx global>
+      {`
+        ul {
+          list-style: none;
+        }
+
+        li {
+          margin-left: -20px;
+          line-height: 60px;
+          background: url('/static/images/burger-icon-small.png') no-repeat 0px 12px;
+        }
+
+        a {
+          margin-left: 50px;
+          text-decoration: none;
+        }
+      `}
+    </style>
+  </Layout>
 );
 
 Index.getInitialProps = async () => {
