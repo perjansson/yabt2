@@ -3,8 +3,8 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/b/lilys': { page: '/burger', query: { id: 'lilys' } },
-      '/b/frickhagberg': { page: '/burger', query: { id: 'frickhagberg' } },
+      '/b/frick_hagberg': { page: '/burger', query: { id: 'frick_hagberg' } },
       '/b/barrels': { page: '/burger', query: { id: 'barrels' } },
-    };
+    }
   },
-};
+}

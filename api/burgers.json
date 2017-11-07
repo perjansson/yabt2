@@ -10,17 +10,17 @@
     "web": "http://www.lilysburger.com"
   },
   {
-    "id": "frickhagberg",
+    "id": "frick_hagberg",
     "name": "Frick & Hagberg",
     "web": "http://www.frickochson.se"
   },
   {
-    "id": "bunmeatbun",
+    "id": "bun_meat_bun",
     "name": "Bun Meat Bun",
     "web": "http://www.bunmeatbun.se"
   },
   {
-    "id": "burgerbistro",
+    "id": "burger_bistro",
     "name": "Burger Bistro",
     "web": "http://www.burgerbistro.se"
   },
@@ -35,12 +35,12 @@
     "web": "http://xn--kk-via.com/"
   },
   {
-    "id": "svenskahamburgerkoket",
+    "id": "svenska_hamburgerkoket",
     "name": "Svenska Hamburgerköket",
     "web": "http://www.hamburgerkoket.se/"
   },
   {
-    "id": "prime",
+    "id": "prime_burger",
     "name": "Prime Burger",
     "web": "http://www.primeburger.se"
   },
@@ -50,42 +50,42 @@
     "web": "https://www.facebook.com/pages/Frankys/1521921874691695"
   },
   {
-    "id": "gnarly",
+    "id": "gnarly_burger",
     "name": "Gnarly Burger",
     "web": "http://www.gnarlyburger.se"
   },
   {
-    "id": "burgerboat",
+    "id": "burger_boat",
     "name": "Burger Boat",
     "web": "http://www.burgerboat.se/"
   },
   {
-    "id": "angrydiner",
+    "id": "angry_diner",
     "name": "Angry Diner",
     "web": "http://www.facebook.com/angrydiner"
   },
   {
-    "id": "fastfoodspecialisterna",
+    "id": "fast_food_specialisterna",
     "name": "Fast Food Specialisterna",
     "web": "http://www.facebook.com/Fast-Food-Specialisterna-188706417998748/"
   },
   {
-    "id": "cafelevinsky",
+    "id": "cafe_levinskys",
     "name": "Café Levinsky's",
     "web": "http://www.levinskys.se"
   },
   {
-    "id": "bonmoulesburger",
+    "id": "bon_moules_burgers",
     "name": "Bon Moules & Burgers",
     "web": "https://www.bookatable.se/bon-moules-burgers-vasastan-stockholm"
   },
   {
-    "id": "philsburger",
+    "id": "phils_burger",
     "name": "Phils Burger",
-    "web": "http://www.philsburger.se"
+    "web": "http://www.phils_burger.se"
   },
   {
-    "id": "kitchenontheroad",
+    "id": "kitchen_on_the_road",
     "name": "Kitchen On The Road",
     "web": "https://www.facebook.com/Kitchen-On-The-Road-751538624922182"
   },
@@ -95,7 +95,7 @@
     "web": "http://www.babas.nu"
   },
   {
-    "id": "e4baren",
+    "id": "e4_baren",
     "name": "E4-baren",
     "web": "http://www.e4-baren.se"
   },
@@ -105,12 +105,12 @@
     "web": "http://www.vigarda.se"
   },
   {
-    "id": "barburgercafe",
+    "id": "bar_burger_cafe",
     "name": "Bar Burger Café",
     "web": "http://www.barburgercafe.se"
   },
   {
-    "id": "burgersbeer",
+    "id": "burgers_beer",
     "name": "Burgers & Beer",
     "web": "http://www.burgersandbeer.se"
   }
