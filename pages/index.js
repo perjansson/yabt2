@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
 
 import Layout from '../components/layout'
-import Teaser from './teaser'
+import Teaser from '../components/teaser'
 
 import apiUrl from '../config/apiUrl'
 
@@ -29,23 +29,30 @@ const Index = ({ burgers }) => (
           display: grid;
           height: 100vh;
           grid-template-columns: 100%;
-          grid-auto-rows: 67.7%;
+          grid-auto-rows: 40%;
         }
 
         a {
           text-decoration: none;
         }
 
-        @media all and (min-width: 768px) and (max-width: 959px) {
+        @media all and (min-width: 600px) {
           ul {
             grid-template-columns: 50% 50%;
+            grid-auto-rows: 70%;
           }
         }
 
-        @media all and (min-width: 960px) {
+        @media all and (min-width: 750px) {
+          ul {
+            grid-template-columns: 50% 50%;
+            grid-auto-rows: 40%;
+          }
+        }
+
+        @media all and (min-width: 1200px) {
           ul {
             grid-template-columns: 33% 33% auto;
-            grid-auto-rows: 40%;
           }
         }
       `}
