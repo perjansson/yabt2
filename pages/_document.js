@@ -15,7 +15,30 @@ export default class Document extends NextDocument {
           <meta name="theme-color" content="#f4b342" />
           <link rel="manifest" href="/static/manifest.json" />
           <link rel="dns-prefetch" href="//yetanotherburgertested.herokuapp.com" />
+          <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" />
         </Head>
+        <style jsx global>
+          {`
+            * {
+              font-family: 'Space Mono', monospace;
+            }
+
+            body {
+              margin: 0;
+              padding: 0;
+            }
+
+            h1 {
+              margin-bottom: 0;
+            }
+
+            a {
+              text-decoration: none;
+              color: #fff;
+              text-shadow: 3px 3px 6px #000;
+            }
+          `}
+        </style>
         <body className="sans-serif">
           <Main />
           <NextScript />

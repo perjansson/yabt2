@@ -1,9 +1,6 @@
 import { func, oneOfType, arrayOf, node } from 'prop-types'
 
-import Meta from '../components/meta'
-
-const Layout = ({ renderHeader, children }) => [
-  <Meta key="head" />,
+const Layout = ({ renderHeader, children }) => (
   <div key="body" className="layout">
     <div className="header">{renderHeader()}</div>
     {children}
@@ -54,8 +51,8 @@ const Layout = ({ renderHeader, children }) => [
         }
       `}
     </style>
-  </div>,
-]
+  </div>
+)
 
 Layout.propTypes = {
   renderHeader: func,

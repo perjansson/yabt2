@@ -9,8 +9,8 @@ const Burger = ({ id, name, web }) => (
   <Layout
     key="body"
     renderHeader={() => [
-      <h1>{name}</h1>,
-      <a href={web} target="_blank">
+      <h1 key="burger-name">{name}</h1>,
+      <a key="web-page" href={web} target="_blank">
         &gt; Homepage &lt;
       </a>,
     ]}
