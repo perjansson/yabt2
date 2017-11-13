@@ -41,7 +41,7 @@ const Teaser = ({ burger }) => (
               font-size: 42px;
             }
           }
-        }     
+        }
       `}
     </style>
   </div>

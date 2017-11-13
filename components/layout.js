@@ -4,11 +4,15 @@ import Meta from '../components/meta'
 
 const Layout = ({ renderHeader, children }) => [
   <Meta key="head" />,
-  <div key="body">
+  <div key="body" className="layout">
     <div className="header">{renderHeader()}</div>
     {children}
     <style jsx>
       {`
+        .layout {
+          height: 100vh;
+        }
+
         .header {
           z-index: 1;
           position: absolute;
@@ -16,16 +20,21 @@ const Layout = ({ renderHeader, children }) => [
           left: 50%;
           transform: translate(-50%, 0);
           text-transform: uppercase;
-          text-shadow: 2px 2px 4px #fff;
-          opacity: 0.2;
+          color: #fff;
+          text-shadow: 6px 6px 12px #000;
+          opacity: 0.5;
           font-size: 36px;
-          margin-top: -60px;
+          white-space: nowrap;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
         @media all and (min-width: 960px) {
           .header {
             font-size: 64px;
-            margin-top: -100px;
+            margin-top: -50px;
           }
         }
       `}

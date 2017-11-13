@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from 'next/head'
 
 const Meta = title => (
   <div>
@@ -18,9 +18,19 @@ const Meta = title => (
           margin: 0;
           padding: 0;
         }
+
+        h1 {
+          margin-bottom: 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          text-shadow: 3px 3px 6px #000;
+        }
       `}
     </style>
   </div>
-);
+)
 
-export default Meta;
+export default Meta

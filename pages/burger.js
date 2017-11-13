@@ -5,11 +5,30 @@ import Layout from '../components/layout'
 
 import apiUrl from '../config/apiUrl'
 
-const Burger = ({ name, web }) => (
-  <Layout key="body" renderHeader={() => <h1>{name}</h1>}>
-    <a href={web} target="_blank">
-      &gt;&gt;&gt; Homepage
-    </a>
+const Burger = ({ id, name, web }) => (
+  <Layout
+    key="body"
+    renderHeader={() => [
+      <h1>{name}</h1>,
+      <a href={web} target="_blank">
+        &gt; Homepage &lt;
+      </a>,
+    ]}
+  >
+    <div className="burger" />
+    <style jsx>
+      {`
+        .burger {
+          height: 100%;
+          background-blend-mode: multiply;
+          filter: contrast(120%) saturate(125%);
+          background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.3)),
+              url('/static/images/burgers/teaser/${id}.jpg');
+          background-size: cover;
+          border: 1px solid #fff;
+        }
+      `}
+    </style>
   </Layout>
 )
 
@@ -24,6 +43,7 @@ Burger.getInitialProps = async (context) => {
 }
 
 Burger.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   web: PropTypes.string.isRequired,
 }
