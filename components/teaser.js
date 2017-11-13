@@ -13,7 +13,6 @@ const Teaser = ({ burger }) => (
               url('/static/images/burgers/teaser/${burger.id}.jpg');
           background-size: cover;
           border: 1px solid #fff;
-          margin-right: -1px;
 
           .burger-name {
             margin: 0;
