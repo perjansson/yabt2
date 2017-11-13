@@ -1,6 +1,7 @@
 const express = require('express')
 const next = require('next')
 const compression = require('compression')
+const sslRedirect = require('heroku-ssl-redirect')
 
 const path = require('path')
 
@@ -15,6 +16,7 @@ app
   .then(() => {
     const server = express()
     server.use(compression())
+    server.use(sslRedirect())
 
     // API
     server.get('/api/b', async (req, res) => {
