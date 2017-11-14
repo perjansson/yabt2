@@ -23,7 +23,7 @@ const Burger = ({ id, name, web }) => (
           background-blend-mode: multiply;
           filter: contrast(120%) saturate(125%);
           background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.3)),
-              url('/static/images/burgers/teaser/${id}.jpg');
+              url('/static/images/burgers/${id}.jpg');
           background-size: cover;
           border: 1px solid #fff;
         }
