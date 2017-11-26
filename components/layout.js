@@ -19,7 +19,7 @@ const Layout = ({ renderHeader, children }) => (
           text-transform: uppercase;
           color: #fff;
           text-shadow: 6px 6px 12px #000;
-          opacity: 0.5;
+          opacity: 0.8;
           font-size: 14px;
           white-space: nowrap;
           text-overflow: hidden;
