@@ -49,6 +49,7 @@ class Index extends React.PureComponent {
               margin: 0;
               padding: 0;
               display: grid;
+              grid-gap: 0.4rem;
               height: 100vh;
               grid-template-columns: 100%;
               grid-auto-rows: 40%;

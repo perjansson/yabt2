@@ -12,7 +12,6 @@ const Teaser = ({ burger }) => (
           background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.3)),
               url('/static/images/burgers/teaser/${burger.id}.jpg');
           background-size: cover;
-          border: 1px solid #fff;
 
           .burger-name {
             margin: 0;
