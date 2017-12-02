@@ -11,7 +11,7 @@ const Teaser = ({ burger }) => (
         .teaser {
           height: 100%;
           background-blend-mode: multiply;
-          filter: contrast(120%) saturate(125%);
+          filter: contrast(130%) saturate(150%);
           background-size: cover;
         }
 
@@ -37,23 +37,27 @@ const Teaser = ({ burger }) => (
           opacity: 0.8;
           text-transform: uppercase;
           font-size: 30px;
+          float: left;
         }
 
         @media all and (min-width: 600px) {
           .burger-name {
-            font-size: 24px;
+            font-size: 28px;
+            float: right;
           }
         }
 
         @media all and (min-width: 750px) {
           .burger-name {
             font-size: 42px;
+            float: left;
           }
         }
 
         @media all and (min-width: 1200px) {
           .burger-name {
             font-size: 38px;
+            float: left;
           }
         }
       `}

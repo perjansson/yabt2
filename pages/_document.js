@@ -7,7 +7,7 @@ export default class Document extends NextDocument {
         <Head>
           <title>Yet Another Burger Tested</title>
           <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
           <meta
             name="description"
             content="A Burger Test Progressive Web App built using Next.js"
