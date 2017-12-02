@@ -10,13 +10,16 @@ const getFile = async (fileName) => {
 }
 
 const listBurgers = async () => getFile('burgers.json')
-const ranking = async () => getFile('rank.json')
+const getRanking = async () => getFile('rank.json')
 
 const listBurgersByRank = async () => {
   const burgers = await listBurgers()
   const burgersAsObj = burgers.reduce((r, b) => ({ ...r, [b.id]: b }), {})
-  const rank = await ranking()
-  const rankedBurgers = Object.values(rank).map(r => burgersAsObj[r])
+  const ranking = await getRanking()
+  const rankedBurgers = Object.entries(ranking).map(([rank, burger]) => ({
+    ...burgersAsObj[burger],
+    rank,
+  }))
   return rankedBurgers
 }
 

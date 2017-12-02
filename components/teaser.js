@@ -2,7 +2,10 @@ import { shape, string } from 'prop-types'
 
 const Teaser = ({ burger }) => (
   <div className="teaser">
-    <p className="burger-name">{burger.name}</p>
+    <p className="burger-name">
+      {burger.rank}.
+      {burger.name}
+    </p>
     <style jsx>
       {`
         .teaser {
@@ -33,24 +36,24 @@ const Teaser = ({ burger }) => (
           text-shadow: 3px 3px 6px #000;
           opacity: 0.8;
           text-transform: uppercase;
-          font-size: 34px;
+          font-size: 30px;
         }
 
         @media all and (min-width: 600px) {
           .burger-name {
-            font-size: 28px;
+            font-size: 24px;
           }
         }
 
         @media all and (min-width: 750px) {
           .burger-name {
-            font-size: 48px;
+            font-size: 42px;
           }
         }
 
         @media all and (min-width: 1200px) {
           .burger-name {
-            font-size: 42px;
+            font-size: 38px;
           }
         }
       `}
