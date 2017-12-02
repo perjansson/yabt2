@@ -59,14 +59,21 @@ class Index extends React.PureComponent {
               text-decoration: none;
             }
 
-            @media all and (min-width: 600px) {
+            @media all and (min-width: 500px) {
               ul {
                 grid-template-columns: 50% 50%;
                 grid-auto-rows: 70%;
               }
             }
 
-            @media all and (min-width: 750px) {
+            @media all and (min-width: 750px) and (orientation: landscape) {
+              ul {
+                grid-template-columns: 50% 50%;
+                grid-auto-rows: 70%;
+              }
+            }
+
+            @media all and (min-width: 750px) and (orientation: portrait) {
               ul {
                 grid-template-columns: 50% 50%;
                 grid-auto-rows: 40%;
@@ -76,6 +83,7 @@ class Index extends React.PureComponent {
             @media all and (min-width: 1200px) {
               ul {
                 grid-template-columns: 33% 33% auto;
+                grid-auto-rows: 40%;
               }
             }
           `}

@@ -29,14 +29,14 @@ const Layout = ({ renderHeader, children }) => (
           align-items: center;
         }
 
-        @media all and (min-width: 600px) {
+        @media all and (min-width: 500px) {
           .header {
             font-size: 20px;
             margin-top: -10px;
           }
         }
 
-        @media all and (min-width: 750px) {
+        @media all and (min-width: 820px) {
           .header {
             font-size: 32px;
             margin-top: -20px;

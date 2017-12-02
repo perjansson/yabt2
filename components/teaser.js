@@ -40,14 +40,14 @@ const Teaser = ({ burger }) => (
           float: left;
         }
 
-        @media all and (min-width: 600px) {
+        @media all and (min-width: 500px) {
           .burger-name {
-            font-size: 28px;
+            font-size: 24px;
             float: right;
           }
         }
 
-        @media all and (min-width: 750px) {
+        @media all and (min-width: 820px) {
           .burger-name {
             font-size: 42px;
             float: left;
