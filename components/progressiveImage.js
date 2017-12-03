@@ -1,12 +1,12 @@
 import { Component } from 'react'
-import { obj, string } from 'prop-types'
+import { string, object } from 'prop-types'
 
 class ProgressiveImage extends Component {
   static propTypes = {
     placeholder: string.isRequired,
     src: string.isRequired,
     alt: string,
-    style: obj,
+    style: object,
   }
 
   static defaultProps = {
@@ -55,11 +55,15 @@ class ProgressiveImage extends Component {
     image.src = src
   }
 
-  style = loading => ({
-    transition: '0.5s filter linear',
-    filter: `contrast(130%) saturate(150%) ${loading ? 'blur(50px)' : ''}`,
-    ...this.props.style,
-  })
+  style = (loading) => {
+    const { style } = this.props
+    const { filter } = style
+    return {
+      transition: '0.5s filter linear',
+      ...style,
+      filter: `${filter || ''} ${loading ? 'blur(50px)' : ''}`,
+    }
+  }
 
   render() {
     const { image, loading } = this.state

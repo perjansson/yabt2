@@ -15,6 +15,7 @@ const burgerStyle = {
   width: '100vw',
   height: '100vh',
   objectFit: 'cover',
+  filter: 'contrast(130%) saturate(150%)',
 }
 
 const Burger = ({ id, name, web }) => (
