@@ -1,16 +1,21 @@
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
-import ProgressiveImage from 'react-progressive-image'
 
 import Layout from '../components/layout'
 import inline from '../components/inline'
+import ProgressiveImage from '../components/progressiveImage'
 
 import apiUrl from '../config/apiUrl'
 
-const filter = loading => ({
-  filter: `contrast(130%) saturate(150%) ${loading ? 'blur(25px)' : ''}`,
-})
+const burgerStyle = {
+  position: 'relative',
+  zIndex: -1,
+  display: 'block',
+  width: '100vw',
+  height: '100vh',
+  objectFit: 'cover',
+}
 
 const Burger = ({ id, name, web }) => (
   <Layout
@@ -25,23 +30,18 @@ const Burger = ({ id, name, web }) => (
     )}
   >
     <div className="wrapper">
-      <ProgressiveImage src={`/static/images/burgers/${id}.jpg`} placeholder={inline[id]}>
-        {(src, loading) => (
-          <img
-            style={filter(loading)}
-            className="burger-image"
-            src={src}
-            alt={`Burger from ${name}`}
-          />
-        )}
-      </ProgressiveImage>
+      <ProgressiveImage
+        src={`/static/images/burgers/${id}.jpg`}
+        placeholder={inline[id]}
+        style={burgerStyle}
+      />
     </div>
     <style jsx>
       {`
         .wrapper {
           display: inline-block;
-          width: 100%;
-          height: 100%;
+          width: 100vw;
+          height: 100vh;
           background-repeat: no-repeat;
           background: linear-gradient(
             to bottom,
@@ -50,17 +50,6 @@ const Burger = ({ id, name, web }) => (
             transparent,
             rgba(0, 0, 0, 0.75)
           );
-        }
-
-        .burger-image {
-          position: relative;
-          z-index: -1;
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          background-blend-mode: multiply;
-          transition: 2s filter linear;
         }
       `}
     </style>
