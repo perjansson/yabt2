@@ -60,6 +60,7 @@ const Burger = ({ id, name, web }) => (
           height: 100%;
           object-fit: cover;
           background-blend-mode: multiply;
+          transition: 2s filter linear;
         }
       `}
     </style>
