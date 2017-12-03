@@ -32,8 +32,8 @@ const Burger = ({ id, name, web }) => (
   >
     <div className="wrapper">
       <ProgressiveImage
-        src={`/static/images/burgers/${id}.jpg`}
         placeholder={inline[id]}
+        image={`/static/images/burgers/${id}.jpg`}
         style={burgerStyle}
       />
     </div>

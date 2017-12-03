@@ -4,7 +4,7 @@ import { string, object } from 'prop-types'
 class ProgressiveImage extends Component {
   static propTypes = {
     placeholder: string.isRequired,
-    src: string.isRequired,
+    image: string.isRequired,
     alt: string,
     style: object,
   }
@@ -15,44 +15,44 @@ class ProgressiveImage extends Component {
   }
 
   state = {
-    image: this.props.placeholder,
+    currentImage: this.props.placeholder,
     loading: true,
   }
 
   componentDidMount() {
-    this.fetchImage(this.props.src)
+    this.fetchImage(this.props.image)
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.src !== this.props.src) {
-      this.setState({ image: nextProps.placeholder, loading: true }, () => {
-        this.fetchImage(nextProps.src)
+    if (nextProps.image !== this.props.image) {
+      this.setState({ currentImage: nextProps.placeholder, loading: true }, () => {
+        this.fetchImage(nextProps.image)
       })
     }
   }
 
   componentWillUnmount() {
-    if (this.image) {
-      this.image.onload = null
+    if (this.loadingImage) {
+      this.loadingImage.onload = null
     }
   }
 
   onLoad = () => {
     this.setState({
-      image: this.image.src,
+      currentImage: this.loadingImage.src,
       loading: false,
     })
   }
 
   fetchImage = (src) => {
-    if (this.image) {
-      this.image.onload = null
+    if (this.loadingImage) {
+      this.loadingImage.onload = null
     }
     const image = new Image()
-    this.image = image
     image.onload = this.onLoad
     image.onerror = this.onError
     image.src = src
+    this.loadingImage = image
   }
 
   style = (loading) => {
@@ -66,9 +66,9 @@ class ProgressiveImage extends Component {
   }
 
   render() {
-    const { image, loading } = this.state
+    const { currentImage, loading } = this.state
     const { alt } = this.props
-    return <img style={this.style(loading)} className="burger-image" src={image} alt={alt} />
+    return <img style={this.style(loading)} className="burger-image" src={currentImage} alt={alt} />
   }
 }
 
