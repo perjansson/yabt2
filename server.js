@@ -36,10 +36,6 @@ app
       app.render(req, res, actualPage, queryParams)
     })
 
-    // Service worker
-    server.get('/service-worker.js', (req, res) =>
-      res.sendFile(path.resolve('./.next/service-worker.js')))
-
     server.get('*', (req, res) => handle(req, res))
 
     const port = process.env.PORT || 3000

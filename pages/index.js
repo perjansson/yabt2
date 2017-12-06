@@ -21,7 +21,7 @@ class Index extends React.PureComponent {
   async componentDidMount() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('/service-worker.js')
+        .register('/static/sw/service-worker.js')
         .then(() => console.log('service worker registration successful'))
         .catch(err => console.warn('service worker registration failed', err))
     }
