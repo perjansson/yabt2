@@ -1,19 +1,7 @@
 import { Component } from 'react'
-import { string, object } from 'prop-types'
+import PropTypes from 'prop-types'
 
 class ProgressiveImage extends Component {
-  static propTypes = {
-    placeholder: string.isRequired,
-    image: string.isRequired,
-    alt: string,
-    style: object,
-  }
-
-  static defaultProps = {
-    alt: '',
-    style: {},
-  }
-
   state = {
     currentImage: this.props.placeholder,
     loading: true,
@@ -37,20 +25,13 @@ class ProgressiveImage extends Component {
     }
   }
 
-  onLoad = () => {
-    this.setState({
-      currentImage: this.loadingImage.src,
-      loading: false,
-    })
-  }
-
   fetchImage = (src) => {
     if (this.loadingImage) {
       this.loadingImage.onload = null
     }
+
     const image = new Image()
-    image.onload = this.onLoad
-    image.onerror = this.onError
+    image.onload = () => this.setState({ currentImage: this.loadingImage.src, loading: false })
     image.src = src
     this.loadingImage = image
   }
@@ -68,8 +49,20 @@ class ProgressiveImage extends Component {
   render() {
     const { currentImage, loading } = this.state
     const { alt } = this.props
-    return <img style={this.style(loading)} className="burger-image" src={currentImage} alt={alt} />
+    return <img style={this.style(loading)} src={currentImage} alt={alt} />
   }
+}
+
+ProgressiveImage.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  style: PropTypes.object,
+}
+
+ProgressiveImage.defaultProps = {
+  alt: '',
+  style: {},
 }
 
 export default ProgressiveImage
