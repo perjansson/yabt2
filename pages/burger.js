@@ -1,10 +1,8 @@
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import withRedux from 'next-redux-wrapper'
 import fetch from 'isomorphic-unfetch'
 
-import { actionCreators, initStore } from '../store/store'
+import { reduxPage } from '../store/store'
 
 import Layout from '../components/layout'
 import inline from '../components/inline'
@@ -61,8 +59,8 @@ const Burger = ({ id, name, web }) => (
   </Layout>
 )
 
-Burger.getInitialProps = async (context) => {
-  const { id } = context.query
+Burger.getInitialProps = async ({ query }) => {
+  const { id } = query
   const res = await fetch(`${apiUrl}/api/b/${id}`)
   const burger = await res.json()
 
@@ -77,8 +75,4 @@ Burger.propTypes = {
   web: PropTypes.string.isRequired,
 }
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actionCreators, dispatch),
-})
-
-export default withRedux(initStore, null, mapDispatchToProps)(Burger)
+export default reduxPage(Burger)

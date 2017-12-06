@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import withRedux from 'next-redux-wrapper'
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
 
-import { actionCreators, initStore } from '../store/store'
+import { reduxPage } from '../store/store'
+import { actionCreators } from '../store/actions'
+import { selectBurgers } from '../store/selectors'
 
 import Layout from '../components/layout'
 import Teaser from '../components/teaser'
@@ -14,14 +14,15 @@ import apiUrl from '../config/apiUrl'
 
 class Index extends React.PureComponent {
   static async getInitialProps({ store }) {
-    let { burgers } = store.getState()
-    if (!burgers) {
-      const res = await fetch(`${apiUrl}/api/b`)
-      burgers = await res.json()
-      store.dispatch(actionCreators.gotBurgers(burgers))
-    }
-
+    const burgers = selectBurgers(store.getState()) || (await Index.fetchBurgers(store))
     return { burgers }
+  }
+
+  static fetchBurgers = async (store) => {
+    const res = await fetch(`${apiUrl}/api/b`)
+    const burgers = await res.json()
+    store.dispatch(actionCreators.gotBurgers(burgers))
+    return burgers
   }
 
   async componentDidMount() {
@@ -103,8 +104,4 @@ Index.propTypes = {
   burgers: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actionCreators, dispatch),
-})
-
-export default withRedux(initStore, null, mapDispatchToProps)(Index)
+export default reduxPage(Index)

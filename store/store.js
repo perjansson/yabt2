@@ -1,31 +1,16 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, bindActionCreators } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
-import logger from 'redux-logger'
+import withRedux from 'next-redux-wrapper'
 
-const defaultState = {
-  burgers: null,
-}
-
-export const actionTypes = { GOT_BURGERS: 'GOT_BURGERS' }
-
-export const actionCreators = {
-  gotBurgers: burgers => ({
-    type: actionTypes.GOT_BURGERS,
-    payload: burgers,
-  }),
-}
-
-export const reducer = (state = defaultState, action) => {
-  const { type, payload } = action
-
-  switch (type) {
-    case actionTypes.GOT_BURGERS:
-      return { ...state, burgers: payload }
-    default:
-      return state
-  }
-}
+import { actionCreators } from './actions'
+import reducer, { defaultState } from './reducer'
 
 export const initStore = (initialState = defaultState) =>
-  createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware, logger)))
+  createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actionCreators, dispatch),
+})
+
+export const reduxPage = Page => withRedux(initStore, null, mapDispatchToProps)(Page)
