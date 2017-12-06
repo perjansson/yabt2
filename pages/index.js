@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { bindActionCreators } from 'redux'
+import withRedux from 'next-redux-wrapper'
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
+
+import { actionCreators, initStore } from '../store/store'
 
 import Layout from '../components/layout'
 import Teaser from '../components/teaser'
@@ -9,11 +13,13 @@ import Teaser from '../components/teaser'
 import apiUrl from '../config/apiUrl'
 
 class Index extends React.PureComponent {
-  static async getInitialProps() {
-    const res = await fetch(`${apiUrl}/api/b`)
-    const burgers = await res.json()
-
-    console.log(`Fetched number of burgers: ${burgers.length}`)
+  static async getInitialProps({ store }) {
+    let { burgers } = store.getState()
+    if (!burgers) {
+      const res = await fetch(`${apiUrl}/api/b`)
+      burgers = await res.json()
+      store.dispatch(actionCreators.gotBurgers(burgers))
+    }
 
     return { burgers }
   }
@@ -97,4 +103,8 @@ Index.propTypes = {
   burgers: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default Index
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actionCreators, dispatch),
+})
+
+export default withRedux(initStore, null, mapDispatchToProps)(Index)

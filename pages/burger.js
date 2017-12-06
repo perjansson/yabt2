@@ -1,6 +1,10 @@
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { bindActionCreators } from 'redux'
+import withRedux from 'next-redux-wrapper'
 import fetch from 'isomorphic-unfetch'
+
+import { actionCreators, initStore } from '../store/store'
 
 import Layout from '../components/layout'
 import inline from '../components/inline'
@@ -73,4 +77,8 @@ Burger.propTypes = {
   web: PropTypes.string.isRequired,
 }
 
-export default Burger
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actionCreators, dispatch),
+})
+
+export default withRedux(initStore, null, mapDispatchToProps)(Burger)
