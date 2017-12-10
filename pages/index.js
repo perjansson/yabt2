@@ -25,7 +25,7 @@ class Index extends React.PureComponent {
     return burgers
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/service-worker.js')
