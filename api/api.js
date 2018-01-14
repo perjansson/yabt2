@@ -11,6 +11,7 @@ const getFile = async (fileName) => {
 
 const listBurgers = async () => getFile('burgers.json')
 const getRanking = async () => getFile('rank.json')
+const getPositions = async () => getFile('position.json')
 
 const listBurgersByRank = async () => {
   const burgersAsList = await listBurgers()
@@ -28,7 +29,12 @@ const listBurgersByRank = async () => {
 
 const getBurger = async (id) => {
   const burgers = await listBurgers()
-  return burgers.find(b => b.id === id)
+  const ranking = await getRanking()
+  const positions = await getPositions()
+  const burger = burgers.find(b => b.id === id)
+  const rank = Object.entries(ranking).find(([, i]) => i === burger.id)[0]
+  const position = positions[burger.id]
+  return { ...burger, rank, position }
 }
 
 module.exports = { listBurgersByRank, getBurger }

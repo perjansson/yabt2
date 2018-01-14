@@ -1,10 +1,12 @@
-import { Fragment } from 'react'
-import PropTypes from 'prop-types'
+import { Component, Fragment } from 'react'
+import { string, number, shape } from 'prop-types'
 import fetch from 'isomorphic-unfetch'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import { reduxPage } from '../store/store'
 
 import Layout from '../components/layout'
+import Map from '../components/map'
 import inline from '../components/inline'
 import ProgressiveImage from '../components/progressiveImage'
 
@@ -20,44 +22,87 @@ const burgerStyle = {
   filter: 'contrast(130%) saturate(150%)',
 }
 
-const Burger = ({ id, name, web }) => (
+class Burger extends Component {
+	state = {
+	  showMap: false,
+	}
+
+	toggleShowMap = (e) => {
+	  this.setState(state => ({
+	    showMap: !state.showMap,
+	  }))
+	  e.preventDefault()
+	}
+
+	render() {
+	  const {
+	    id, name, rank, web, position,
+	  } = this.props
+	  return (
   <Layout
-    key="body"
     renderHeader={() => (
       <Fragment>
-        <h1 key="burger-name">{name}</h1>
-        <a key="web-page" href={web} target="_blank">
-          &gt; Homepage &lt;
-        </a>
+        <h1>{name}</h1>
+        <div className="links">
+          <span>rank {rank}</span>
+          <a href={web} target="_blank">
+								homepage
+          </a>
+          <a href="" onClick={this.toggleShowMap} tabIndex="-1">
+								map
+          </a>
+        </div>
       </Fragment>
-    )}
+				)}
   >
-    <div className="wrapper">
-      <ProgressiveImage
-        placeholder={inline[id]}
-        image={`/static/images/burgers/${id}.jpg`}
-        style={burgerStyle}
-      />
-    </div>
+    <TransitionGroup />
+    {!this.state.showMap ? (
+      <CSSTransition timeout="500">
+        <div className="imagewrapper">
+          <ProgressiveImage
+            placeholder={inline[id]}
+            image={`/static/images/burgers/${id}.jpg`}
+            style={burgerStyle}
+          />
+        </div>
+      </CSSTransition>
+				) : (
+  <div className="mapwrapper">
+    <Map {...position} />
+  </div>
+				)}
     <style jsx>
       {`
-        .wrapper {
-          display: inline-block;
-          width: 100vw;
-          height: 100vh;
-          background-repeat: no-repeat;
-          background: linear-gradient(
-            to bottom,
-            transparent,
-            transparent,
-            transparent,
-            rgba(0, 0, 0, 0.75)
-          );
-        }
-      `}
+						.links > *:not(:last-child):after {
+							content: ' | ';
+						}
+
+						.mapwrapper {
+							display: inline-block;
+							width: 100vw;
+							height: 100vh;
+							background-color: blue;
+						}
+
+						.imagewrapper {
+							display: inline-block;
+							width: 100vw;
+							height: 100vh;
+							background-repeat: no-repeat;
+							background: linear-gradient(
+								to bottom,
+								transparent,
+								transparent,
+								transparent,
+								rgba(0, 0, 0, 0.75)
+							);
+						}
+					`}
     </style>
   </Layout>
-)
+	  )
+	}
+}
 
 Burger.getInitialProps = async ({ query }) => {
   const { id } = query
@@ -70,9 +115,11 @@ Burger.getInitialProps = async ({ query }) => {
 }
 
 Burger.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  web: PropTypes.string.isRequired,
+  id: string.isRequired,
+  name: string.isRequired,
+  rank: string.isRequired,
+  web: string.isRequired,
+  position: shape({ long: number.isRequired, lat: number.isRequired }).isRequired,
 }
 
 export default reduxPage(Burger)

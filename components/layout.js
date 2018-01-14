@@ -16,7 +16,6 @@ const Layout = ({ renderHeader, children }) => (
           top: 0;
           left: 50%;
           transform: translate(-50%, 0);
-          text-transform: uppercase;
           color: #fff;
           text-shadow: 6px 6px 12px #000;
           opacity: 0.8;
