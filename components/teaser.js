@@ -8,23 +8,37 @@ const Teaser = ({ burger }) => (
     </p>
     <style jsx>
       {`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        
         .teaser {
           height: 100%;
           background-blend-mode: multiply;
           filter: contrast(130%) saturate(150%);
           background-size: cover;
+          opacity: 0;
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          animation-delay: ${burger.rank / 15}s;
+          animation-fill-mode: both;
         }
 
         :global(.webp) {
           .teaser {
-            background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.3)),
+            background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.0)),
               url('/static/images/burgers/teaser/${burger.id}.webp');
           }
         }
 
         :global(.no-webp) {
           .teaser {
-            background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.3)),
+            background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.0)),
               url('/static/images/burgers/teaser/${burger.id}.jpg');
           }
         }
