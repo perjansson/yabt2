@@ -27,8 +27,8 @@
         "globals": {
             "NODE_ENV": "test"
         },
-        "moduleFileExtensions": ["js", "jsx"],
-        "setupFiles": ["./.jest/jestsetup.js"],
+        "moduleFileExtensions": ["js", "jsx", "json"],
+        "setupFiles": ["./.test/jestsetup.js"],
         "snapshotSerializers": ["enzyme-to-json/serializer"]
     },
     "keywords": [],
@@ -36,6 +36,7 @@
     "license": "ISC",
     "dependencies": {
         "@storybook/addon-actions": "^3.3.10",
+        "@storybook/addon-storyshots": "^3.3.10",
         "@storybook/react": "^3.3.10",
         "babel-core": "^6.26.0",
         "babel-eslint": "^8.2.1",

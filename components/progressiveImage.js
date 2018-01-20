@@ -55,7 +55,7 @@ class ProgressiveImage extends Component {
 
 ProgressiveImage.propTypes = {
     placeholder: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     alt: PropTypes.string,
     style: PropTypes.object
 }

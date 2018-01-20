@@ -1,4 +1,4 @@
-import { shape, string, bool } from 'prop-types'
+import { shape, string } from 'prop-types'
 
 const Teaser = ({ burger, localImage }) => (
     <div className="teaser">
@@ -27,17 +27,25 @@ const Teaser = ({ burger, localImage }) => (
                     animation-duration: 1s;
                     animation-delay: ${burger.rank / 15}s;
                     animation-fill-mode: both;
+                    background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.5)),
+                        url(${
+                            !localImage
+                                ? `/static/images/burgers/teaser/${burger.id}.jpg`
+                                : localImage
+                        });
                 }
-
-                :global(.webp) {
+                
+                /*:global(.webp) {
                     .teaser {
                         background-image: linear-gradient(
                                 rgba(195, 198, 0, 0),
                                 rgba(195, 198, 0, 0.5)
                             ),
-                            url(${!localImage
-                                ? `/static/images/burgers/teaser/${burger.id}.webp`
-                                : localImage});
+                            url(${
+                                !localImage
+                                    ? `/static/images/burgers/teaser/${burger.id}.webp`
+                                    : localImage
+                            });
                     }
                 }
 
@@ -47,11 +55,13 @@ const Teaser = ({ burger, localImage }) => (
                                 rgba(195, 198, 0, 0),
                                 rgba(195, 198, 0, 0.5)
                             ),
-                            url(${!localImage
-                                ? `/static/images/burgers/teaser/${burger.id}.jpg`
-                                : localImage});
+                            url(${
+                                !localImage
+                                    ? `/static/images/burgers/teaser/${burger.id}.jpg`
+                                    : localImage
+                            });
                     }
-                }
+                }*/
 
                 .burger-name {
                     margin: 0;
@@ -91,11 +101,11 @@ const Teaser = ({ burger, localImage }) => (
 
 Teaser.propTypes = {
     burger: shape({ id: string, name: string, web: string }).isRequired,
-    localImage: bool
+    localImage: string
 }
 
 Teaser.defaultProps = {
-    localImage: false
+    localImage: null
 }
 
 export default Teaser
