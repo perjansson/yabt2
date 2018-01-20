@@ -1,13 +1,13 @@
 import { shape, string } from 'prop-types'
 
 const Teaser = ({ burger }) => (
-  <div className="teaser">
-    <p className="burger-name">
-      {burger.rank}.
-      {burger.name}
-    </p>
-    <style jsx>
-      {`
+    <div className="teaser">
+        <p className="burger-name">
+            {burger.rank}.
+            {burger.name}
+        </p>
+        <style jsx>
+            {`
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -15,7 +15,7 @@ const Teaser = ({ burger }) => (
           to {
             opacity: 1;
           }
-        }
+        } 
         
         .teaser {
           height: 100%;
@@ -75,12 +75,12 @@ const Teaser = ({ burger }) => (
           }
         }
       `}
-    </style>
-  </div>
+        </style>
+    </div>
 )
 
 Teaser.propTypes = {
-  burger: shape({ id: string, name: string, web: string }).isRequired,
+    burger: shape({ id: string, name: string, web: string }).isRequired
 }
 
 export default Teaser
