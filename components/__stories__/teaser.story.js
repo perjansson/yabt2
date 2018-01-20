@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Teaser from './teaser'
+import Teaser from '../teaser'
 
 const burger = {
     id: 'barrels',

@@ -27,41 +27,21 @@ const Teaser = ({ burger, localImage }) => (
                     animation-duration: 1s;
                     animation-delay: ${burger.rank / 15}s;
                     animation-fill-mode: both;
-                    background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.5)),
-                        url(${
-                            !localImage
-                                ? `/static/images/burgers/teaser/${burger.id}.jpg`
-                                : localImage
-                        });
-                }
-                
-                /*:global(.webp) {
-                    .teaser {
-                        background-image: linear-gradient(
-                                rgba(195, 198, 0, 0),
-                                rgba(195, 198, 0, 0.5)
-                            ),
-                            url(${
-                                !localImage
-                                    ? `/static/images/burgers/teaser/${burger.id}.webp`
-                                    : localImage
-                            });
-                    }
                 }
 
-                :global(.no-webp) {
-                    .teaser {
-                        background-image: linear-gradient(
-                                rgba(195, 198, 0, 0),
-                                rgba(195, 198, 0, 0.5)
-                            ),
-                            url(${
-                                !localImage
-                                    ? `/static/images/burgers/teaser/${burger.id}.jpg`
-                                    : localImage
-                            });
-                    }
-                }*/
+                :global(.webp) .teaser {
+                    background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.5)),
+                        url(${!localImage
+                            ? `/static/images/burgers/teaser/${burger.id}.webp`
+                            : localImage});
+                }
+
+                :global(.no-webp) .teaser {
+                    background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.5)),
+                        url(${!localImage
+                            ? `/static/images/burgers/teaser/${burger.id}.jpg`
+                            : localImage});
+                }
 
                 .burger-name {
                     margin: 0;

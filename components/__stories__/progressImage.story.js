@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import ProgressiveImage from './progressiveImage'
+import ProgressiveImage from '../progressiveImage'
 
 const style = {
     position: 'relative',
@@ -18,10 +18,7 @@ const props = {
     image: 'http://localhost:3000/static/images/burgers/teaser/barrels.jpg'
 }
 
-const Container = storyFn => <div style={{ margin: '100px' }}>{storyFn()}</div>
-
 storiesOf('ProgressiveImage', module)
-    .addDecorator(Container)
     .add('before full image loaded', () => (
         <ProgressiveImage placeholder={props.placeholder} style={style} />
     ))

@@ -1,2 +1,3 @@
-# yabt2
-Yet Another Burger Tested 2
+# Yet Another Burger Tested 2
+
+YABT2 is a responsive PWA built with Next.js

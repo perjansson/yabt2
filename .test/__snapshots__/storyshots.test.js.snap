@@ -70,10 +70,10 @@ exports[`Storyshots Teaser with image 1`] = `
   }
 >
   <div
-    className="jsx-2375084941 teaser"
+    className="jsx-3704679196 teaser"
   >
     <p
-      className="jsx-2375084941 burger-name"
+      className="jsx-3704679196 burger-name"
     >
       1
       .
@@ -93,10 +93,10 @@ exports[`Storyshots Teaser without burger name or rank 1`] = `
   }
 >
   <div
-    className="jsx-2752700786 teaser"
+    className="jsx-880605187 teaser"
   >
     <p
-      className="jsx-2752700786 burger-name"
+      className="jsx-880605187 burger-name"
     >
       
       .
@@ -116,10 +116,10 @@ exports[`Storyshots Teaser without image loaded 1`] = `
   }
 >
   <div
-    className="jsx-2867679974 teaser"
+    className="jsx-296905889 teaser"
   >
     <p
-      className="jsx-2867679974 burger-name"
+      className="jsx-296905889 burger-name"
     >
       1
       .
