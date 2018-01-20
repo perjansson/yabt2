@@ -6,8 +6,7 @@ class Map extends PureComponent {
         const { lat, long } = this.props
         return (
             <div>
-                {lat}
-                {long}
+                {lat} & {long}
             </div>
         )
     }

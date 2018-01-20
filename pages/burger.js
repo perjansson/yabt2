@@ -42,12 +42,8 @@ class Burger extends Component {
                             <a href={web} target="_blank">
                                 homepage
                             </a>
-                            <a
-                                href=""
-                                onClick={this.toggleShowMap}
-                                tabIndex="-1"
-                            >
-                                map
+                            <a href="" onClick={this.toggleShowMap} tabIndex="-1">
+                                {!this.state.showMap ? 'map' : 'burger'}
                             </a>
                         </div>
                     </Fragment>
@@ -117,8 +113,7 @@ Burger.propTypes = {
     name: string.isRequired,
     rank: string.isRequired,
     web: string.isRequired,
-    position: shape({ long: number.isRequired, lat: number.isRequired })
-        .isRequired
+    position: shape({ long: number.isRequired, lat: number.isRequired }).isRequired
 }
 
 export default reduxPage(Burger)
