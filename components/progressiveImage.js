@@ -13,9 +13,12 @@ class ProgressiveImage extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.image !== this.props.image) {
-            this.setState({ currentImage: nextProps.placeholder, loading: true }, () => {
-                this.fetchImage(nextProps.image)
-            })
+            this.setState(
+                { currentImage: nextProps.placeholder, loading: true },
+                () => {
+                    this.fetchImage(nextProps.image)
+                }
+            )
         }
     }
 
@@ -31,7 +34,11 @@ class ProgressiveImage extends Component {
         }
 
         const image = new Image()
-        image.onload = () => this.setState({ currentImage: this.loadingImage.src, loading: false })
+        image.onload = () =>
+            this.setState({
+                currentImage: this.loadingImage.src,
+                loading: false
+            })
         image.src = src
         this.loadingImage = image
     }
