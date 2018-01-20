@@ -94,4 +94,8 @@ Teaser.propTypes = {
     localImage: bool
 }
 
+Teaser.defaultProps = {
+    localImage: false
+}
+
 export default Teaser
