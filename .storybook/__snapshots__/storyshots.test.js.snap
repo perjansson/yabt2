@@ -8,6 +8,78 @@ exports[`Storyshots Map showing coordinates 1`] = `
 </div>
 `;
 
+exports[`Storyshots Menu showing menu with burger link 1`] = `
+Array [
+  <h1
+    className="jsx-2165836718"
+  >
+    Bun Meat Bun
+  </h1>,
+  <nav
+    className="jsx-2165836718 links"
+  >
+    <span
+      className="jsx-2165836718"
+    >
+      rank 
+      4
+    </span>
+    <a
+      className="jsx-2165836718"
+      href="http://www.bunmeatbun.se"
+      target="_blank"
+    >
+      homepage
+    </a>
+    <a
+      className="jsx-2165836718"
+      data-test-name="toggleBurgerMapLink"
+      href="#"
+      onClick={[Function]}
+      tabIndex="-1"
+    >
+      burger
+    </a>
+  </nav>,
+]
+`;
+
+exports[`Storyshots Menu showing menu with map link 1`] = `
+Array [
+  <h1
+    className="jsx-2165836718"
+  >
+    Bun Meat Bun
+  </h1>,
+  <nav
+    className="jsx-2165836718 links"
+  >
+    <span
+      className="jsx-2165836718"
+    >
+      rank 
+      4
+    </span>
+    <a
+      className="jsx-2165836718"
+      href="http://www.bunmeatbun.se"
+      target="_blank"
+    >
+      homepage
+    </a>
+    <a
+      className="jsx-2165836718"
+      data-test-name="toggleBurgerMapLink"
+      href="#"
+      onClick={[Function]}
+      tabIndex="-1"
+    >
+      map
+    </a>
+  </nav>,
+]
+`;
+
 exports[`Storyshots ProgressiveImage after full image loaded 1`] = `
 <img
   alt=""

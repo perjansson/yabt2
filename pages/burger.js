@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react'
+import { Component } from 'react'
 import { string, number, shape } from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
@@ -6,9 +6,11 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { reduxPage } from '../store/store'
 
 import Layout from '../components/layout'
-import Map from '../components/map'
-import inline from '../components/inline'
 import ProgressiveImage from '../components/progressiveImage'
+
+import Menu from '../components/burger/menu'
+import Map from '../components/burger/map'
+import placeHolderImages from '../components/burger/placeHolderImages'
 
 import apiUrl from '../config/apiUrl'
 
@@ -25,28 +27,21 @@ const burgerStyle = {
 class Burger extends Component {
     state = { showMap: false }
 
-    toggleShowMap = e => {
+    handleToggleBurgerMap = e => {
         this.setState(state => ({ showMap: !state.showMap }))
         e.preventDefault()
     }
 
     render() {
-        const { id, name, rank, web, position } = this.props
+        const { id, position } = this.props
         return (
             <Layout
                 renderHeader={() => (
-                    <Fragment>
-                        <h1>{name}</h1>
-                        <div className="links">
-                            <span>rank {rank}</span>
-                            <a href={web} target="_blank">
-                                homepage
-                            </a>
-                            <a href="" onClick={this.toggleShowMap} tabIndex="-1">
-                                {!this.state.showMap ? 'map' : 'burger'}
-                            </a>
-                        </div>
-                    </Fragment>
+                    <Menu
+                        {...this.props}
+                        showMap={!this.state.showMap}
+                        onToggleBurgerMap={this.handleToggleBurgerMap}
+                    />
                 )}
             >
                 <TransitionGroup />
@@ -54,7 +49,7 @@ class Burger extends Component {
                     <CSSTransition timeout="500">
                         <div className="imagewrapper">
                             <ProgressiveImage
-                                placeholder={inline[id]}
+                                placeholder={placeHolderImages[id]}
                                 image={`/static/images/burgers/${id}.jpg`}
                                 style={burgerStyle}
                             />
@@ -67,10 +62,6 @@ class Burger extends Component {
                 )}
                 <style jsx>
                     {`
-                        .links > *:not(:last-child):after {
-                            content: ' | ';
-                        }
-
                         .mapwrapper {
                             display: inline-block;
                             width: 100vw;
@@ -113,7 +104,7 @@ Burger.propTypes = {
     name: string.isRequired,
     rank: string.isRequired,
     web: string.isRequired,
-    position: shape({ long: number.isRequired, lat: number.isRequired }).isRequired
+    position: shape({ long: number.isRequired, lat: number.isRequired })
 }
 
 export default reduxPage(Burger)

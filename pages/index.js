@@ -8,7 +8,7 @@ import { actionCreators } from '../store/actions'
 import { selectBurgers } from '../store/selectors'
 
 import Layout from '../components/layout'
-import Teaser from '../components/teaser'
+import Teaser from '../components/burger/teaser'
 
 import apiUrl from '../config/apiUrl'
 
