@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { string, number, shape } from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import styled from 'react-emotion'
 
 import { reduxPage } from '../store/store'
 
@@ -23,6 +24,27 @@ const burgerStyle = {
     objectFit: 'cover',
     filter: 'contrast(130%) saturate(150%)'
 }
+
+const ImageWrapper = styled.div`
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        transparent,
+        transparent,
+        rgba(0, 0, 0, 0.75)
+    );
+`
+
+const MapWrapper = styled.div`
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+`
 
 class Burger extends Component {
     state = { showMap: false }
@@ -47,43 +69,19 @@ class Burger extends Component {
                 <TransitionGroup />
                 {!this.state.showMap ? (
                     <CSSTransition timeout="500">
-                        <div className="imagewrapper">
+                        <ImageWrapper>
                             <ProgressiveImage
                                 placeholder={placeHolderImages[id]}
                                 image={`/static/images/burgers/${id}.jpg`}
                                 style={burgerStyle}
                             />
-                        </div>
+                        </ImageWrapper>
                     </CSSTransition>
                 ) : (
-                    <div className="mapwrapper">
+                    <MapWrapper>
                         <Map {...position} />
-                    </div>
+                    </MapWrapper>
                 )}
-                <style jsx>
-                    {`
-                        .mapwrapper {
-                            display: inline-block;
-                            width: 100vw;
-                            height: 100vh;
-                            background-color: blue;
-                        }
-
-                        .imagewrapper {
-                            display: inline-block;
-                            width: 100vw;
-                            height: 100vh;
-                            background-repeat: no-repeat;
-                            background: linear-gradient(
-                                to bottom,
-                                transparent,
-                                transparent,
-                                transparent,
-                                rgba(0, 0, 0, 0.75)
-                            );
-                        }
-                    `}
-                </style>
             </Layout>
         )
     }

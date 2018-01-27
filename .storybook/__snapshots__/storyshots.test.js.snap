@@ -10,29 +10,23 @@ exports[`Storyshots Map showing coordinates 1`] = `
 
 exports[`Storyshots Menu showing menu with burger link 1`] = `
 Array [
-  <h1
-    className="jsx-2165836718"
-  >
+  <h1>
     Bun Meat Bun
   </h1>,
   <nav
-    className="jsx-2165836718 links"
+    className="css-blqkt"
   >
-    <span
-      className="jsx-2165836718"
-    >
+    <span>
       rank 
       4
     </span>
     <a
-      className="jsx-2165836718"
       href="http://www.bunmeatbun.se"
       target="_blank"
     >
       homepage
     </a>
     <a
-      className="jsx-2165836718"
       data-test-name="toggleBurgerMapLink"
       href="#"
       onClick={[Function]}
@@ -46,29 +40,23 @@ Array [
 
 exports[`Storyshots Menu showing menu with map link 1`] = `
 Array [
-  <h1
-    className="jsx-2165836718"
-  >
+  <h1>
     Bun Meat Bun
   </h1>,
   <nav
-    className="jsx-2165836718 links"
+    className="css-blqkt"
   >
-    <span
-      className="jsx-2165836718"
-    >
+    <span>
       rank 
       4
     </span>
     <a
-      className="jsx-2165836718"
       href="http://www.bunmeatbun.se"
       target="_blank"
     >
       homepage
     </a>
     <a
-      className="jsx-2165836718"
       data-test-name="toggleBurgerMapLink"
       href="#"
       onClick={[Function]}
@@ -126,10 +114,10 @@ exports[`Storyshots Teaser with image 1`] = `
   }
 >
   <div
-    className="jsx-3704679196 teaser"
+    className="css-1p857zd"
   >
     <p
-      className="jsx-3704679196 burger-name"
+      className="css-uraeir"
     >
       1
       .
@@ -149,10 +137,10 @@ exports[`Storyshots Teaser without burger name or rank 1`] = `
   }
 >
   <div
-    className="jsx-880605187 teaser"
+    className="css-tntfsc"
   >
     <p
-      className="jsx-880605187 burger-name"
+      className="css-uraeir"
     >
       
       .
@@ -172,10 +160,10 @@ exports[`Storyshots Teaser without image loaded 1`] = `
   }
 >
   <div
-    className="jsx-296905889 teaser"
+    className="css-1fx67om"
   >
     <p
-      className="jsx-296905889 burger-name"
+      className="css-uraeir"
     >
       1
       .

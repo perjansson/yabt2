@@ -1,9 +1,16 @@
 import { Fragment } from 'react'
+import styled from 'react-emotion'
+
+const Nav = styled.nav`
+    > *:not(:last-child):after {
+        content: ' | ';
+    }
+`
 
 const BurgerMenu = ({ name, rank, web, showMap, onToggleBurgerMap }) => (
     <Fragment>
         <h1>{name}</h1>
-        <nav className="links">
+        <Nav>
             <span>rank {rank}</span>
             <a href={web} target="_blank">
                 homepage
@@ -16,14 +23,7 @@ const BurgerMenu = ({ name, rank, web, showMap, onToggleBurgerMap }) => (
             >
                 {showMap ? 'map' : 'burger'}
             </a>
-        </nav>
-        <style jsx>
-            {`
-                .links > *:not(:last-child):after {
-                    content: ' | ';
-                }
-            `}
-        </style>
+        </Nav>
     </Fragment>
 )
 

@@ -7,15 +7,10 @@ import { actionCreators } from './actions'
 import reducer, { defaultState } from './reducer'
 
 export const initStore = (initialState = defaultState) =>
-    createStore(
-        reducer,
-        initialState,
-        composeWithDevTools(applyMiddleware(thunkMiddleware))
-    )
+    createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
 
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actionCreators, dispatch)
 })
 
-export const reduxPage = Page =>
-    withRedux(initStore, null, mapDispatchToProps)(Page)
+export const reduxPage = Page => withRedux(initStore, null, mapDispatchToProps)(Page)

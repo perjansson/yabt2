@@ -9,5 +9,6 @@
         "test": {
             "presets": [["env", { "modules": "commonjs" }], "next/babel"]
         }
-    }
+    },
+    "plugins": [["emotion", { "inline": true }]]
 }
