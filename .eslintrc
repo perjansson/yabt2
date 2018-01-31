@@ -10,6 +10,7 @@
     "rules": {
         "jsx-a11y/anchor-is-valid": [0],
         "no-console": [0],
+        "no-nested-ternary": [0],
         "no-underscore-dangle": ["error", { "allow": ["__NEXT_DATA__"] }],
         "no-tabs": [0],
         "semi": ["error", "never"],

@@ -2,55 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 import Link from 'next/link'
-import styled from 'react-emotion'
 
 import { reduxPage } from '../store/store'
 import { actionCreators } from '../store/actions'
 import { selectBurgers } from '../store/selectors'
 
 import Layout from '../components/layout'
+import BurgerGrid from '../components/burger/grid'
+import GridItem from '../components/burger/gridItem'
 import Teaser from '../components/burger/teaser'
 
 import apiUrl from '../config/apiUrl'
 
-const BurgerGrid = styled.ul`
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-gap: 0.4rem;
-    height: 100vh;
-    grid-template-columns: 100%;
-    grid-auto-rows: 40%;
-
-    @media all and (min-width: 500px) {
-        grid-template-columns: 50% 50%;
-        grid-auto-rows: 70%;
-    }
-
-    @media all and (min-width: 750px) and (orientation: landscape) {
-        grid-template-columns: 50% 50%;
-        grid-auto-rows: 70%;
-    }
-
-    @media all and (min-width: 750px) and (orientation: portrait) {
-        grid-template-columns: 50% 50%;
-        grid-auto-rows: 40%;
-    }
-
-    @media all and (min-width: 1200px) {
-        grid-template-columns: 33% 33% auto;
-        grid-auto-rows: 40%;
-    }
-
-    a {
-        text-decoration: none;
-    }
-`
-
 class Index extends React.PureComponent {
     static async getInitialProps({ store }) {
-        const burgers = selectBurgers(store.getState()) || (await Index.fetchBurgers(store))
+        const burgers =
+            selectBurgers(store.getState()) || (await Index.fetchBurgers(store))
         return { burgers }
     }
 
@@ -65,26 +32,47 @@ class Index extends React.PureComponent {
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker
                 .register('/service-worker.js')
-                .then(() => console.log('service worker registration successful'))
-                .catch(err => console.warn('service worker registration failed', err))
+                .then(() =>
+                    console.log('service worker registration successful')
+                )
+                .catch(err =>
+                    console.warn('service worker registration failed', err)
+                )
         }
     }
 
-    renderBurgerTeasers = burger => (
-        <li key={burger.id}>
-            <Link prefetch as={`b/${burger.id}`} href={`/burger?id=${burger.id}`}>
-                <a>
-                    <Teaser burger={burger} />
-                </a>
-            </Link>
-        </li>
-    )
+    renderBurgerTeasers = burgers =>
+        burgers.map((burger, index) => {
+            const isBig = index % 3 === 0
+            const isHigh = index % 4 === 0
+            const isWide = index % 5 === 0
+
+            return (
+                <GridItem
+                    key={burger.id}
+                    isBig={isBig}
+                    isHigh={isHigh}
+                    isWide={isWide}
+                >
+                    <Link
+                        prefetch
+                        as={`b/${burger.id}`}
+                        href={`/burger?id=${burger.id}`}
+                    >
+                        <a>
+                            <Teaser burger={burger} />
+                        </a>
+                    </Link>
+                </GridItem>
+            )
+        })
 
     render() {
-        const { burgers } = this.props
         return (
             <Layout key="body">
-                <BurgerGrid>{burgers.map(this.renderBurgerTeasers)}</BurgerGrid>
+                <BurgerGrid>
+                    {this.renderBurgerTeasers(this.props.burgers)}
+                </BurgerGrid>
             </Layout>
         )
     }

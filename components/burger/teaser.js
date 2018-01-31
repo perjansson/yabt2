@@ -12,23 +12,28 @@ const Container = styled.div`
     animation-duration: 0.5s;
     animation-delay: ${({ burger }) => `${burger.rank / 15}s`};
     animation-fill-mode: both;
-    background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.5)),
-        url(${({ localImage, burger }) =>
-            !localImage ? `/static/images/burgers/teaser/${burger.id}.jpg` : localImage});
 
-    /*
-    :global(.webp) .teaser {
-        background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.5)),
+    :global(.webp) & {
+        background-image: linear-gradient(
+                rgba(195, 198, 0, 0),
+                rgba(195, 198, 0, 0.5)
+            ),
             url(${({ localImage, burger }) =>
-                !localImage ? `/static/images/burgers/teaser/${burger.id}.webp` : localImage});
+                !localImage
+                    ? `/static/images/burgers/teaser/${burger.id}.webp`
+                    : localImage});
     }
 
-    :global(.no-webp) .teaser {
-        background-image: linear-gradient(rgba(195, 198, 0, 0), rgba(195, 198, 0, 0.5)),
+    :global(.no-webp) & {
+        background-image: linear-gradient(
+                rgba(195, 198, 0, 0),
+                rgba(195, 198, 0, 0.5)
+            ),
             url(${({ localImage, burger }) =>
-                !localImage ? `/static/images/burgers/teaser/${burger.id}.jpg` : localImage});
+                !localImage
+                    ? `/static/images/burgers/teaser/${burger.id}.jpg`
+                    : localImage});
     }
-    */
 `
 
 const Inner = styled.p`
@@ -38,23 +43,7 @@ const Inner = styled.p`
     text-shadow: 3px 3px 6px #000;
     opacity: 0.8;
     text-transform: uppercase;
-    font-size: 30px;
     float: left;
-
-    @media all and (min-width: 500px) {
-        font-size: 24px;
-        float: right;
-    }
-
-    @media all and (min-width: 820px) {
-        font-size: 42px;
-        float: left;
-    }
-
-    @media all and (min-width: 1200px) {
-        font-size: 38px;
-        float: left;
-    }
 `
 
 const Teaser = props => (
