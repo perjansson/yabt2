@@ -8,6 +8,7 @@ import { reduxPage } from '../store/store'
 
 import Layout from '../components/layout'
 import ProgressiveImage from '../components/progressiveImage'
+import animations from '../components/animations'
 
 import Menu from '../components/burger/menu'
 import Map from '../components/burger/map'
@@ -43,7 +44,9 @@ const MapWrapper = styled.div`
     display: inline-block;
     width: 100vw;
     height: 100vh;
-    background-color: blue;
+    animation-name: ${animations.blurIn};
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
 `
 
 class Burger extends Component {
@@ -55,7 +58,7 @@ class Burger extends Component {
     }
 
     render() {
-        const { id, position } = this.props
+        const { id, position, name } = this.props
         return (
             <Layout
                 renderHeader={() => (
@@ -68,7 +71,7 @@ class Burger extends Component {
             >
                 <TransitionGroup />
                 {!this.state.showMap ? (
-                    <CSSTransition timeout="500">
+                    <CSSTransition timeout={500}>
                         <ImageWrapper>
                             <ProgressiveImage
                                 placeholder={placeHolderImages[id]}
@@ -79,7 +82,7 @@ class Burger extends Component {
                     </CSSTransition>
                 ) : (
                     <MapWrapper>
-                        <Map {...position} />
+                        <Map {...position} name={name} />
                     </MapWrapper>
                 )}
             </Layout>

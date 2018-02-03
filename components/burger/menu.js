@@ -7,7 +7,14 @@ const Nav = styled.nav`
     }
 `
 
-const BurgerMenu = ({ name, rank, web, showMap, onToggleBurgerMap }) => (
+const BurgerMenu = ({
+    name,
+    rank,
+    web,
+    position,
+    showMap,
+    onToggleBurgerMap
+}) => (
     <Fragment>
         <h1>{name}</h1>
         <Nav>
@@ -15,14 +22,16 @@ const BurgerMenu = ({ name, rank, web, showMap, onToggleBurgerMap }) => (
             <a href={web} target="_blank">
                 homepage
             </a>
-            <a
-                href="#"
-                data-test-name="toggleBurgerMapLink"
-                onClick={onToggleBurgerMap}
-                tabIndex="-1"
-            >
-                {showMap ? 'map' : 'burger'}
-            </a>
+            {position && (
+                <a
+                    href="#"
+                    data-test-name="toggleBurgerMapLink"
+                    onClick={onToggleBurgerMap}
+                    tabIndex="-1"
+                >
+                    {showMap ? 'map' : 'burger'}
+                </a>
+            )}
         </Nav>
     </Fragment>
 )

@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import PropTypes from 'prop-types'
+import { string, object } from 'prop-types'
 
 class ProgressiveImage extends Component {
     state = {
@@ -61,10 +61,10 @@ class ProgressiveImage extends Component {
 }
 
 ProgressiveImage.propTypes = {
-    placeholder: PropTypes.string.isRequired,
-    image: PropTypes.string,
-    alt: PropTypes.string,
-    style: PropTypes.object
+    placeholder: string.isRequired,
+    image: string,
+    alt: string,
+    style: object
 }
 
 ProgressiveImage.defaultProps = {

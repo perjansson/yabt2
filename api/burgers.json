@@ -1,117 +1,118 @@
 [
-  {
-    "id": "barrels",
-    "name": "Barrels",
-    "web": "http://www.barrels.se"
-  },
-  {
-    "id": "lilys",
-    "name": "Lily's Burger",
-    "web": "http://www.lilysburger.com"
-  },
-  {
-    "id": "frick_hagberg",
-    "name": "Frick & Hagberg",
-    "web": "http://www.frickochson.se"
-  },
-  {
-    "id": "bun_meat_bun",
-    "name": "Bun Meat Bun",
-    "web": "http://www.bunmeatbun.se"
-  },
-  {
-    "id": "burger_bistro",
-    "name": "Burger Bistro",
-    "web": "http://www.burgerbistro.se"
-  },
-  {
-    "id": "curbside",
-    "name": "Curbside",
-    "web": "http://www.curbside.se"
-  },
-  {
-    "id": "kak",
-    "name": "Käk",
-    "web": "http://xn--kk-via.com/"
-  },
-  {
-    "id": "svenska_hamburgerkoket",
-    "name": "Svenska Hamburgerköket",
-    "web": "http://www.hamburgerkoket.se/"
-  },
-  {
-    "id": "prime_burger",
-    "name": "Prime Burger",
-    "web": "http://www.primeburger.se"
-  },
-  {
-    "id": "frankys",
-    "name": "Franky's",
-    "web": "https://www.facebook.com/pages/Frankys/1521921874691695"
-  },
-  {
-    "id": "gnarly_burger",
-    "name": "Gnarly Burger",
-    "web": "http://www.gnarlyburger.se"
-  },
-  {
-    "id": "burger_boat",
-    "name": "Burger Boat",
-    "web": "http://www.burgerboat.se/"
-  },
-  {
-    "id": "angry_diner",
-    "name": "Angry Diner",
-    "web": "http://www.facebook.com/angrydiner"
-  },
-  {
-    "id": "fast_food_specialisterna",
-    "name": "Fast Food Specialisterna",
-    "web": "http://www.facebook.com/Fast-Food-Specialisterna-188706417998748/"
-  },
-  {
-    "id": "cafe_levinskys",
-    "name": "Café Levinsky's",
-    "web": "http://www.levinskys.se"
-  },
-  {
-    "id": "bon_moules_burgers",
-    "name": "Bon Moules & Burgers",
-    "web": "https://www.bookatable.se/bon-moules-burgers-vasastan-stockholm"
-  },
-  {
-    "id": "phils_burger",
-    "name": "Phils Burger",
-    "web": "http://www.phils_burger.se"
-  },
-  {
-    "id": "kitchen_on_the_road",
-    "name": "Kitchen On The Road",
-    "web": "https://www.facebook.com/Kitchen-On-The-Road-751538624922182"
-  },
-  {
-    "id": "babas",
-    "name": "Babas",
-    "web": "http://www.babas.nu"
-  },
-  {
-    "id": "e4_baren",
-    "name": "E4-baren",
-    "web": "http://www.e4-baren.se"
-  },
-  {
-    "id": "vigarda",
-    "name": "Vigårda",
-    "web": "http://www.vigarda.se"
-  },
-  {
-    "id": "bar_burger_cafe",
-    "name": "Bar Burger Café",
-    "web": "http://www.barburgercafe.se"
-  },
-  {
-    "id": "burgers_beer",
-    "name": "Burgers & Beer",
-    "web": "http://www.burgersandbeer.se"
-  }
+    {
+        "id": "barrels",
+        "name": "Barrels",
+        "web": "http://www.barrels.se"
+    },
+    {
+        "id": "lilys",
+        "name": "Lily's Burger",
+        "web": "http://www.lilysburger.com"
+    },
+    {
+        "id": "frick_hagberg",
+        "name": "Frick & Hagberg",
+        "web": "http://www.frickochson.se"
+    },
+    {
+        "id": "bun_meat_bun",
+        "name": "Bun Meat Bun",
+        "web": "http://www.bunmeatbun.se"
+    },
+    {
+        "id": "burger_bistro",
+        "name": "Burger Bistro",
+        "web": "http://www.burgerbistro.se"
+    },
+    {
+        "id": "curbside",
+        "name": "Curbside",
+        "web": "http://www.curbside.se"
+    },
+    {
+        "id": "kak",
+        "name": "Käk",
+        "web": "http://xn--kk-via.com/"
+    },
+    {
+        "id": "svenska_hamburgerkoket",
+        "name": "Svenska Hamburgerköket",
+        "web": "http://www.hamburgerkoket.se/"
+    },
+    {
+        "id": "prime_burger",
+        "name": "Prime Burger",
+        "web": "http://www.primeburger.se"
+    },
+    {
+        "id": "frankys",
+        "name": "Franky's",
+        "web": "https://www.facebook.com/pages/Frankys/1521921874691695"
+    },
+    {
+        "id": "gnarly_burger",
+        "name": "Gnarly Burger",
+        "web": "http://www.gnarlyburger.se"
+    },
+    {
+        "id": "burger_boat",
+        "name": "Burger Boat",
+        "web": "http://www.burgerboat.se/"
+    },
+    {
+        "id": "angry_diner",
+        "name": "Angry Diner",
+        "web": "http://www.facebook.com/angrydiner"
+    },
+    {
+        "id": "fast_food_specialisterna",
+        "name": "Fast Food Specialisterna",
+        "web":
+            "http://www.facebook.com/Fast-Food-Specialisterna-188706417998748/"
+    },
+    {
+        "id": "cafe_levinskys",
+        "name": "Café Levinsky's",
+        "web": "http://www.levinskys.se"
+    },
+    {
+        "id": "bon_moules_burgers",
+        "name": "Bon Moules & Burgers",
+        "web": "https://www.bookatable.se/bon-moules-burgers-vasastan-stockholm"
+    },
+    {
+        "id": "phils_burger",
+        "name": "Phils Burger",
+        "web": "http://www.phils_burger.se"
+    },
+    {
+        "id": "kitchen_on_the_road",
+        "name": "Kitchen On The Road",
+        "web": "https://www.facebook.com/Kitchen-On-The-Road-751538624922182"
+    },
+    {
+        "id": "babas",
+        "name": "Babas",
+        "web": "http://www.babas.nu"
+    },
+    {
+        "id": "e4_baren",
+        "name": "E4-baren",
+        "web": "http://www.e4-baren.se"
+    },
+    {
+        "id": "vigarda",
+        "name": "Vigårda",
+        "web": "http://www.vigarda.se"
+    },
+    {
+        "id": "bar_burger_cafe",
+        "name": "Bar Burger Café",
+        "web": "http://www.barburgercafe.se"
+    },
+    {
+        "id": "burgers_beer",
+        "name": "Burgers & Beer",
+        "web": "http://www.burgersandbeer.se"
+    }
 ]

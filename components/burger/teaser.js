@@ -1,5 +1,6 @@
 import { shape, string } from 'prop-types'
 import styled from 'react-emotion'
+
 import animations from '../animations'
 
 const Container = styled.div`
