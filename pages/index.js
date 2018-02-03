@@ -14,6 +14,12 @@ import Teaser from '../components/burger/teaser'
 
 import apiUrl from '../config/apiUrl'
 
+const sizes = {
+    high: [4, 8, 11],
+    wide: [3, 12, 19],
+    big: [1, 10, 14]
+}
+
 class Index extends React.PureComponent {
     static async getInitialProps({ store }) {
         const burgers =
@@ -43,9 +49,9 @@ class Index extends React.PureComponent {
 
     renderBurgerTeasers = burgers =>
         burgers.map((burger, index) => {
-            const isBig = index % 3 === 0
-            const isHigh = index % 4 === 0
-            const isWide = index % 5 === 0
+            const isHigh = sizes.high.includes(index)
+            const isWide = sizes.wide.includes(index)
+            const isBig = sizes.big.includes(index)
 
             return (
                 <GridItem
